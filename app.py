@@ -20,10 +20,11 @@ def create_item(item: Item):
     # Check if item with the same id already exists
     for db_item in items_db:
         if db_item['id'] == item.id:
-            raise HTTPException(status_code=400, detail="Item with this ID already exists.")
+            raise HTTPException(status_code=700, detail="Item with this ID already exists.")
     
     # Add item to the database
     items_db.append(item.dict())
+    
     return item
 
 @app.get("/items/", response_model=List[Item])
