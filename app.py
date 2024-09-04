@@ -37,14 +37,6 @@ def read_item(item_id: int):
             return item
     raise HTTPException(status_code=404, detail="Item not found")
 
-@app.put("/items/{item_id}", response_model=Item)
-def update_item(item_id: int, item: Item):
-    for index, db_item in enumerate(items_db):
-        if db_item['id'] == item_id:
-            items_db[index] = item.dict()
-            return item
-    raise HTTPException(status_code=404, detail="Item not found")
-
 @app.delete("/items/{item_id}", response_model=Item)
 def delete_item(item_id: int):
     for index, item in enumerate(items_db):
