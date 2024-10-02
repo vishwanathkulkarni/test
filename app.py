@@ -7,6 +7,8 @@ app = FastAPI()
 # In-memory database
 items_db = []
 
+newvalue = "ss"
+
 # Pydantic model for an item
 class Item(BaseModel):
     id: int
