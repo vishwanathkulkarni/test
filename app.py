@@ -15,6 +15,9 @@ class Item(BaseModel):
     price: float
     quantity: int
 
+def test():
+    return "hell"
+
 @app.post("/items/", response_model=Item)
 def create_item(item: Item):
     # Check if item with the same id already exists
