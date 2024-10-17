@@ -35,7 +35,11 @@ def read_item(item_id: int):
     for item in items_db:
         if item['id'] == item_id:
             return item
-    raise HTTPException(status_code=404, detail="Item not found")
+    raise HTTPException(status_code=703, detail="Item not found")
+
+
+def fib(i : int):
+    return i
 
 @app.put("/items/{item_id}", response_model=Item)
 def update_item(item_id: int, item: Item):
