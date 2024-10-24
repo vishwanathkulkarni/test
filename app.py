@@ -15,6 +15,11 @@ class Item(BaseModel):
     price: float
     quantity: int
 
+def fib(n):
+    return 5
+
+fib()
+
 @app.post("/items/", response_model=Item)
 def create_item(item: Item):
     # Check if item with the same id already exists
