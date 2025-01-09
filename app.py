@@ -5,7 +5,9 @@ from typing import List, Optional
 app = FastAPI()
 
 # In-memory database
-items_db = []
+items_db = ["test",2]
+
+
 
 # Pydantic model for an item
 class Item(BaseModel):
